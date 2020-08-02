@@ -4,16 +4,15 @@ import "./Header.css";
 import emojiSymbolToSrc from "./utils";
 
 // To jest sensowne i takie konstrukcje się pojawiają.
-export default class Header extends PureComponent {
+export default class HeaderV2 extends PureComponent {
 
   static propTypes = {
-      name: PropTypes.string,
-      greeting: PropTypes.string,
-      favouriteEmojiSymbol: PropTypes.string
+      persona: PropTypes.object
   };
 
   render() {
-    const src = emojiSymbolToSrc(this.props.favouriteEmojiSymbol);
+    const { name, greeting, favouriteEmojiSymbol } = this.props.persona;
+    const src = emojiSymbolToSrc(favouriteEmojiSymbol);
 
     return (
       <header className="component-header">
@@ -24,7 +23,7 @@ export default class Header extends PureComponent {
             height="32"
             alt=""
           />
-            {this.props.greeting}, {this.props.name}
+            {greeting}, {name}
           <img
             src={src}
             width="32"

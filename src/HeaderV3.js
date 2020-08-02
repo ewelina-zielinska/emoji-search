@@ -1,19 +1,10 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import "./Header.css";
 import emojiSymbolToSrc from "./utils";
 
 // To jest sensowne i takie konstrukcje się pojawiają.
-export default class Header extends PureComponent {
-
-  static propTypes = {
-      name: PropTypes.string,
-      greeting: PropTypes.string,
-      favouriteEmojiSymbol: PropTypes.string
-  };
-
-  render() {
-    const src = emojiSymbolToSrc(this.props.favouriteEmojiSymbol);
+export default function HeaderV3(props) {
+    const src = emojiSymbolToSrc(props.favouriteEmojiSymbol);
 
     return (
       <header className="component-header">
@@ -24,7 +15,7 @@ export default class Header extends PureComponent {
             height="32"
             alt=""
           />
-            {this.props.greeting}, {this.props.name}
+            {props.greeting}, {props.name}
           <img
             src={src}
             width="32"
@@ -37,5 +28,4 @@ export default class Header extends PureComponent {
         </div>
       </header>
     );
-  }
 }

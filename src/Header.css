@@ -3,9 +3,18 @@
   position: relative;
   font-weight: normal;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 32px;
   text-align: center;
   color: #333;
+}
+
+.component-header .line-1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.component-header .line-2 {
+  font-size: 16px;
+  margin-bottom: 12px;
 }
 
 .component-header img {
